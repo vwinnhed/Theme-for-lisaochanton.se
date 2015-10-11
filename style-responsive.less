@@ -1,0 +1,463 @@
+
+
+/* =Media query for 960 Screens - sets nested grids to 100%
+-------------------------------------------------------------- */
+@media only screen and (max-width:960px){
+
+	.top_bar {
+		nav.menu {
+			ul {
+				margin-top: 15px;
+
+				li {
+
+					a {
+						font-size: 17px;
+
+						p {
+							padding: 6%;
+							
+						}
+					}
+				}
+			}
+		}
+	}
+
+	#hero {
+		//min-height: 800px;
+		h1 {
+			font-weight: 500;
+			line-height: 1.6em;
+		}
+
+		a {
+			font-weight: 700;
+		}
+	}
+
+	#intro {
+		.grid {
+			margin-top: -40px;
+		}
+	}
+
+	#photos {
+		padding: 10% 0;
+
+		.blue_bg {
+			background-color: @primary-blue;
+			-webkit-box-shadow: inset 0px 0px 0px 12px @white;
+			-moz-box-shadow: inset 0px 0px 0px 12px @white;
+			box-shadow: inset 0px 0px 0px 12px @white;
+		}
+
+		img {
+			border: 12px solid white;
+		}
+	}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Media query for iPad and tablets
+-------------------------------------------------------------- */
+@media handheld, only screen and (max-width: 768px), only screen and (max-device-width: 768px) and (orientation:portrait){
+
+	h3 {
+		font-size: 3em;
+	}
+
+	h4 {
+		font-size: 1.3em;
+	}
+
+	a#menu_toggle2 {
+		//background-color: red;
+		display: inline-block;
+		background-color: none;
+		position: absolute;
+		z-index: 300;
+		right: 4px;
+		top: 0px;
+		//float: right;
+		height: 60px;
+		width: 60px;
+		color: white;
+
+		padding-top: 8px;
+		//padding-right: 16px;
+		text-align: center;
+		font-size: 2em;
+		
+		&:hover {
+			background-color: rgba(255, 255, 255, 0);
+		}
+	}
+
+	a#menu_toggle {
+		//background-color: red;
+		display: inline-block;
+		background-color: none;
+		position: absolute;
+		z-index: 300;
+		right: 0px;
+		top: 0px;
+		//float: right;
+		height: 60px;
+		width: 60px;
+
+		padding-top: 10px;
+		//padding-right: 16px;
+		text-align: center;
+		font-size: 1.6em;
+		
+		&:hover {
+			background-color: rgba(255, 255, 255, 0);
+		}
+	}
+	
+	nav.menu {
+		display: none;
+
+		ul {
+			.transition(none);
+		}
+	}
+
+	#menu {
+		//display: none;
+		height: 60px;
+		//z-index: 200;
+		margin-top: 0px;
+
+		.top_bar {
+			.logo {
+				//margin-bottom: -10px;
+				width: 100%;
+				img {
+					height: 80%;
+					//float: none;
+					margin-left: -7px;
+					//margin: auto;
+				}
+			}
+		}
+
+		&.open_menu {
+			height: 200vh;
+			margin-top: 0px !important;
+			z-index: 420 !important;
+			position: fixed;
+			nav.menu {
+				//background-color: green;
+				
+				position: relative;
+				text-align: center;
+				right: auto;
+				display: block;
+				margin-top: 13vh;
+
+				@media only screen and (orientation:landscape){
+					margin-top: 0px !important;
+				}
+
+
+				ul {
+					margin-top: 0px;
+					width: 100%;
+
+					li {
+						display: block;
+						margin-top: 2vh;
+						//background-color: red;
+
+						a {
+							font-size: 20px;
+							display: block;
+
+							&:hover {
+								background-color: @primary-blue;
+								color: @white;
+								text-decoration: none;
+							}
+
+							p {
+								padding: 10px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	
+
+	#hero {
+
+	
+		padding-bottom: 120px;
+		
+		.top_bar {
+			.logo {
+				//display: none;
+				margin-bottom: -10px;
+				width: 100%;
+				img {
+					height: 80%;
+					//float: none;
+					padding-top: 2px;
+					margin: auto;
+				}
+			}
+		}
+
+
+		font-size: 0.8em;
+		
+		
+
+		h2 {
+			font-size: 3.7em;
+		}
+
+		h1 {
+			line-height: 1.5em;
+		}
+
+		#description {
+
+			-webkit-animation: none;
+  			animation: none;
+
+  			margin-top: 4.5vh;
+			margin-bottom: 4.5vh;
+			padding: 15px 3%;
+
+  			a.button {
+				padding: 7px 16px;
+				font-size: 1.1em;
+			}
+
+			h1 {
+				width: 100%;
+				margin: 20px auto 20px auto;
+			}
+		}
+	}
+
+	#intro {
+		.grid {
+			margin-top: -200px;
+			z-index: 40;
+		}
+		p {
+			line-height: 1.45em;
+		}
+
+		h3 {
+			padding-bottom: 1.5%;
+			
+
+		}
+
+		padding-bottom: 90px;
+
+		.text_container {
+			padding-left: 16px;
+			padding-right: 16px;
+
+			img {
+				.transition(none);
+				
+				&:hover {
+					opacity: 1;
+				}
+
+			}
+		}
+	}
+
+	.small_row {
+		padding: 0 12px;
+	}
+
+	#intro_quote {
+		font-size: 0.7em;
+		margin-top: 20px;
+	}
+
+	#cloud_container { 
+		-webkit-animation: none;
+  		animation: none;
+		margin-top: 0px;
+		//z-index: 10;
+		.cloud_ball {
+			-webkit-transform: scale(0.5);
+		    -moz-transform: scale(0.5);
+		    -ms-transform: scale(0.5);
+		    transform: scale(0.5);
+		    .transition(none);
+		    height: 250px;
+			width: 250px;
+			top: -125px;
+
+			&.left {
+				left: -130px;
+			}
+
+			&.right {
+				right: -130px;
+			}
+		}
+	}
+
+	#photos {
+
+		padding-top: 90px;
+		padding-bottom: 90px;
+
+		.blue_bg {
+			background-color: @white;
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
+		}
+
+		img {
+			margin-top: 8px;
+			margin-bottom: 8px; 
+			border: 8px solid white;
+
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
+			-webkit-filter: none;
+			-moz-filter: none;
+			filter: none;
+			opacity: 1;
+			width: 100%;
+			.transition(none);
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+		
+
+
+
+	
+
+	#invite {
+		padding-top: 0px;
+		padding-bottom: 0px;
+		
+		#invite_card {
+			padding-bottom: 53px;
+			padding-top: 50px;
+
+			p, ul {
+				width: 100%;
+				font-size: 1.1em;
+			}
+
+			h3 {
+				padding-bottom: 15px;
+				padding-top: 15px;
+			}
+
+			ul {
+				margin-left: 0px;
+				padding-left: 0px;
+			}
+
+		}
+	}
+
+
+	#rsvp {
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+
+	#rsvp_info {
+		padding: 5% 0%;
+		font-size: 1.1em;
+		line-height: 1.8em;
+
+		h4 {
+			margin-top: 50px;
+		}
+		
+		padding-bottom: 50px;
+
+		ul {
+			padding-left: 20px;
+		}
+		
+	}
+
+
+	#rsvp_form_now_what {
+
+		padding: 50px 5% 50px 5%;
+		
+		p {
+			text-align: justify;
+			line-height: 1.45em;
+
+		}
+	}
+
+	#wave_container {
+		display: none;
+	}
+
+	form {
+		padding: 5% 2px;
+
+		p {
+
+			label {
+				font-size: 2em;
+			}
+		}
+
+		input {
+			&[type="submit"] {
+				max-width: 300px;
+				font-weight: bold;
+				padding: 14px 13px;
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	#footer {
+		padding: 30px auto;
+		background-color: @primary-blue;
+		padding-bottom: 15px;
+		margin-bottom: -1px;
+	}
+}

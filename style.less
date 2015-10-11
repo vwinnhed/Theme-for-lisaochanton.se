@@ -1,0 +1,1243 @@
+/******************************************************************
+Theme Name: antonochlisa.se - ACTIVE
+Description: Theme for antonochlisa.se
+Author: Arvid Bräne
+Author URI: http://www.arvidbrane.se
+Version: 1.0
+******************************************************************/
+
+
+
+
+/*!
+ * Arvid Bräne
+ *
+ * Copyright 2013 Arvid Bräne
+ * Licensed under the MIT 3.0
+ */
+
+/* http://patorjk.com/software/taag/#p=display&f=Colossal&t=ABOUT */
+
+
+/**
+
+
+
+
+
+
+
+
+
+
+
+
+8888888 888b     d888 8888888b.   .d88888b.  8888888b. 88888888888 .d8888b.  
+  888   8888b   d8888 888   Y88b d88P" "Y88b 888   Y88b    888    d88P  Y88b 
+  888   88888b.d88888 888    888 888     888 888    888    888    Y88b.      
+  888   888Y88888P888 888   d88P 888     888 888   d88P    888     "Y888b.   
+  888   888 Y888P 888 8888888P"  888     888 8888888P"     888        "Y88b. 
+  888   888  Y8P  888 888        888     888 888 T88b      888          "888 
+  888   888   "   888 888        Y88b. .d88P 888  T88b     888    Y88b  d88P 
+8888888 888       888 888         "Y88888P"  888   T88b    888     "Y8888P"
+
+**/
+@import "normalize.less"; //Resetter
+@import "gridiculous.less"; //Grids
+@import "abstract_classes.less"; //Usefull classes
+
+
+
+/*@font-face {
+    font-family: 'amatic_sc_regular';
+    src: url('fonts/amaticsc-regular-webfont.eot');
+    src: url('fonts/amaticsc-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/amaticsc-regular-webfont.woff2') format('woff2'),
+         url('fonts/amaticsc-regular-webfont.woff') format('woff'),
+         url('fonts/amaticsc-regular-webfont.ttf') format('truetype'),
+         url('fonts/amaticsc-regular-webfont.svg#amatic_scregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+@font-face {
+    font-family: 'amatic_bold';
+    src: url('fonts/amatic-bold-webfont.eot');
+    src: url('fonts/amatic-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/amatic-bold-webfont.woff2') format('woff2'),
+         url('fonts/amatic-bold-webfont.woff') format('woff'),
+         url('fonts/amatic-bold-webfont.ttf') format('truetype'),
+         url('fonts/amatic-bold-webfont.svg#amaticbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'janda_elegant_handwritingRg';
+    src: url('fonts/jandaeleganthandwriting-webfont.eot');
+    src: url('fonts/jandaeleganthandwriting-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/jandaeleganthandwriting-webfont.woff2') format('woff2'),
+         url('fonts/jandaeleganthandwriting-webfont.woff') format('woff'),
+         url('fonts/jandaeleganthandwriting-webfont.ttf') format('truetype'),
+         url('fonts/jandaeleganthandwriting-webfont.svg#janda_elegant_handwritingRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+
+888     888     d8888 8888888b.  8888888        d8888 888888b.   888      8888888888 .d8888b.  
+888     888    d88888 888   Y88b   888         d88888 888  "88b  888      888       d88P  Y88b 
+888     888   d88P888 888    888   888        d88P888 888  .88P  888      888       Y88b.      
+Y88b   d88P  d88P 888 888   d88P   888       d88P 888 8888888K.  888      8888888    "Y888b.   
+ Y88b d88P  d88P  888 8888888P"    888      d88P  888 888  "Y88b 888      888           "Y88b. 
+  Y88o88P  d88P   888 888 T88b     888     d88P   888 888    888 888      888             "888 
+   Y888P  d8888888888 888  T88b    888    d8888888888 888   d88P 888      888       Y88b  d88P 
+    Y8P  d88P     888 888   T88b 8888888 d88P     888 8888888P"  88888888 8888888888 "Y8888P" 
+
+**/
+
+//Colors
+@white: 						#ffffff; 
+@grey: 							#e9e9e9; 
+@grey-dark: 					#676767;
+@primary-blue: 					#374967; 
+@secondary-blue: 				#253144; 
+@red: 							#db5031;
+
+
+
+
+//Fonts 
+@font1: 						"Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font2: 						"amatic_bold", "amatic_sc_regular", "Amatic SC", "Amatic", "Bebas Neue", sans-serif;;
+@font3:							"janda_elegant_handwritingRg", "Janda Elegant Handwriting", serif;
+@font4: 						Georgia, serif;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+
+ .d8888b.  8888888888 888b    888 8888888888 8888888b.         d8888 888      
+d88P  Y88b 888        8888b   888 888        888   Y88b       d88888 888      
+888    888 888        88888b  888 888        888    888      d88P888 888      
+888        8888888    888Y88b 888 8888888    888   d88P     d88P 888 888      
+888  88888 888        888 Y88b888 888        8888888P"     d88P  888 888      
+888    888 888        888  Y88888 888        888 T88b     d88P   888 888      
+Y88b  d88P 888        888   Y8888 888        888  T88b   d8888888888 888      
+ "Y8888P88 8888888888 888    Y888 8888888888 888   T88b d88P     888 88888888
+
+ **/
+
+
+
+body {
+	font-family: @font1;
+}
+
+#content {
+	overflow: hidden;
+}
+
+//Fuck you chrome..........
+p, h1, h2, h3, h4, h5, h6, pre, blockquote {
+	.margin-before(0em);
+	.margin-after(0em);
+	.margin-start(0em);
+	.margin-end(0em);
+}
+
+.general_container {
+	min-height: 200px;
+	.transition(all .3s ease-in-out);
+}
+
+
+a {
+	text-decoration: none;
+	color: @primary-blue;
+	.transition(all .2s ease-in-out);
+
+	&:hover {
+		opacity: 0.9;
+	}
+
+	&:active {
+		opacity: 1;
+	}
+}
+
+
+//Debug
+.row {
+	//background-color: rgba(50,50,50,0.3);
+}
+
+.grid {
+	//background-color: rgba(50,50,50,0.3);
+}
+
+
+h3 {
+	font-size: 3.5em;
+	margin-top: 20px;
+	.font-smoothing(antialiased);
+	font-weight: normal;
+	font-family: @font2;
+	line-height: 1em; 
+	text-align: center;
+	color: @primary-blue;
+	padding-bottom: 4%;
+}
+
+h4 {
+	font-family: @font3;
+	font-size: 1.3em;
+}
+
+//More overlay
+.nivo-lightbox-theme-default.nivo-lightbox-overlay {
+	background-color: rgba(0,0,0,0.9);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+
+888b     d888 8888888888 888b    888 888     888 
+8888b   d8888 888        8888b   888 888     888 
+88888b.d88888 888        88888b  888 888     888 
+888Y88888P888 8888888    888Y88b 888 888     888 
+888 Y888P 888 888        888 Y88b888 888     888 
+888  Y8P  888 888        888  Y88888 888     888 
+888   "   888 888        888   Y8888 Y88b. .d88P 
+888       888 8888888888 888    Y888  "Y88888P"  
+
+**/
+#menu_toggle, #menu_toggle2 {
+	display: none;
+	-webkit-animation: menu_flyin .4s 1 ease-in-out;
+  	animation: menu_flyin .4s 1 ease-in-out;
+}
+
+#menu {
+	background-color: rgba(255, 255, 255, 0.93);
+	position: fixed;
+	width: 100%;
+	height: 70px;
+	padding: 5px auto;
+	z-index: 20;
+	margin-top: -80px;
+	-webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+	
+	a {
+		color: @primary-blue;	
+		font-size: 16px;
+		padding-top: 3px;
+
+		&:hover {
+			background-color: @primary-blue;
+		}
+	}
+	
+	.top_bar .logo {
+		margin-top: 13px;
+		width: 60%;
+		height: 60%;
+
+
+	}
+
+}
+
+.top_bar {
+	height: 70px;
+	position: relative;
+
+	a {
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	.logo {
+		-webkit-animation: logo_flyin .4s 1 ease-in-out;
+  		animation: logo_flyin .4s 1 ease-in-out;
+		margin-top: 5px;
+		width: 80%;
+		height: 80%;
+		.transition(all .1s ease-in-out);
+
+		&:hover {
+			opacity: 0.9;
+		}
+
+		img {
+			height: 100%;
+			float: left;	
+		}
+	}
+}
+
+nav.menu {
+	//background-color: red;
+
+	-webkit-animation: menu_flyin .4s 1 ease-in-out;
+  	animation: menu_flyin .4s 1 ease-in-out;
+	position: absolute;
+	text-align: right;
+	right: 0px;
+
+
+	ul {
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
+		display: inline-block;
+
+		li {
+			display: inline-block;
+
+			a {
+				color: @white;
+				font-weight: bold;
+				font-size: 18px;
+				.font-smoothing(antialiased);
+				text-transform: uppercase;
+				letter-spacing: 0.02em;
+				.transition(all .1s ease-in-out);
+				&:hover {
+					text-decoration: underline;;
+				}
+
+				p {
+					padding: 20px;
+
+					&:nth-child(4) {
+						padding-right: 0px;
+					}
+					margin-left: 2px;
+				}
+			}
+		}
+	}
+}
+
+
+@-webkit-keyframes menu_flyin {
+	0% { opacity: 0; }
+	50% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+@keyframes menu_flyin {
+	0% { opacity: 0; }
+	50% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+
+@-webkit-keyframes logo_flyin {
+	0% { opacity: 0; }
+	20% { opacity: 0; }
+	80% { opacity: 1; }
+	100% { opacity: 1; }
+}
+
+@keyframes logo_flyin {
+	0% { opacity: 0; }
+	20% { opacity: 0; }
+	80% { opacity: 1; }
+	100% { opacity: 1; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+
+888    888 8888888888 8888888b.   .d88888b.  
+888    888 888        888   Y88b d88P" "Y88b 
+888    888 888        888    888 888     888 
+8888888888 8888888    888   d88P 888     888 
+888    888 888        8888888P"  888     888 
+888    888 888        888 T88b   888     888 
+888    888 888        888  T88b  Y88b. .d88P 
+888    888 8888888888 888   T88b  "Y88888P"                                           
+
+**/
+
+#hero {
+	padding: 3% 0px 200px 0px;
+	background-color: @primary-blue;
+
+	max-height: 2000px;
+	text-align: center;
+	position: relative;
+	color: @white;
+	z-index: 25;
+	background: no-repeat center 0%; 
+	background-size: cover;
+	overflow: hidden;
+
+
+	@media only screen and (min-width:1200px) and (min-height:800px){
+		min-height: 800px;
+		height: 100vh;
+		.transition(none);
+	}
+
+	#description {
+		.box-sizing(border-box);
+		padding: 30px 3%;
+		//padding-bottom: 1000px;
+		display: block;
+		margin-top: 10vh;
+		margin-bottom: 10vh;
+		//margin-top: 0px;
+
+		@media only screen and (min-width:1200px) and (min-height:800px){
+			
+			-webkit-animation: text_flyin 1.3s 1 ease-in-out;
+	  		animation: text_flyin 1.3s 1 ease-in-out;
+	  		margin-top: 14vh;
+	  	}
+
+
+  		a.button {
+			font-weight: bold;
+			display: inline-block;
+			position: relative;
+			text-transform: uppercase;
+			background-color: @white;
+			opacity: 0.7;
+			padding: 11px 25px;
+			.border-radius(100px);
+
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+
+	}
+
+	h1 {
+		font-size: 1.4em;
+		line-height: 2em;
+		opacity: 0.6;
+		letter-spacing: 0.02em;
+		font-weight: lighter;
+		margin: 2% auto 2% auto;
+		width: 70%;
+
+	}
+
+	h2 {
+		font-size: 4.5em;
+		.font-smoothing(antialiased);
+		font-weight: normal;
+		font-family: @font2;
+		line-height: 1em; 
+		
+
+	}
+
+}
+
+@-webkit-keyframes text_flyin {
+	0% { margin-top: 600px; opacity: 0;}
+	70% { margin-top: 600px; opacity: 0;}
+	90% { margin-top: 6vh; opacity: 1;}
+	100% { margin-top: 14vh; }
+}
+
+@keyframes text_flyin {
+	0% { margin-top: 600px; opacity: 0;}
+	70% { margin-top: 600px; opacity: 0;}
+	90% { margin-top: 6vh; opacity: 1;}
+	100% { margin-top: 14vh; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+
+8888888 888b    888 88888888888 8888888b.   .d88888b.  
+  888   8888b   888     888     888   Y88b d88P" "Y88b 
+  888   88888b  888     888     888    888 888     888 
+  888   888Y88b 888     888     888   d88P 888     888 
+  888   888 Y88b888     888     8888888P"  888     888 
+  888   888  Y88888     888     888 T88b   888     888 
+  888   888   Y8888     888     888  T88b  Y88b. .d88P 
+8888888 888    Y888     888     888   T88b  "Y88888P"  
+                                                       
+**/
+
+#intro {
+	background-color: @white;
+	//overflow-x: hidden;
+	width: 100%;
+	padding-bottom: 8%;
+	padding-top: 0;
+	position: relative;
+
+	.grid {
+		z-index: 10;
+		position: relative;
+		margin-top: -30px;
+	}
+
+	.text_container {
+
+		
+		padding: 50px 2% 2% 2%;
+
+		//Nicer on large screens
+		@media only screen and (min-width:1200px){
+			&:nth-child(1) {
+				padding-left: 4%;
+			}
+
+			&:nth-child(2) {
+				padding-right: 4%;	
+			}
+		}
+
+		margin-top: -4%;
+		.box-sizing(border-box);
+
+		img {
+			margin: 2% auto;
+			.transition(all .1s ease-in-out);
+			
+			&:hover {
+				opacity: 0.9;
+			}
+
+		}
+	}
+
+	
+
+	p {
+		text-align: justify;
+		color: @grey-dark;
+		//margin-top: 7%;
+		font-family: @font4;
+		font-size: 1.07em;
+		line-height: 1.7em;
+		margin: 4% auto;  
+
+	}
+
+}
+
+
+#intro_quote {
+	line-height: 1.7em;
+	text-align: center;
+	font-family: @font3;
+	opacity: 0.7;
+	margin-top: 3%;
+	padding-bottom: 1%;
+	p {
+		margin: 5% auto;
+		font-family: @font3;
+		font-size: 1.8em;
+		line-height: 2em;
+		color: @primary-blue;
+		display: inline
+	}
+	
+	span {
+		color: @primary-blue;
+		font-size: 3.1em;
+		margin: 0px 1%;
+	}
+	//p {display: inline};
+
+	blockquote {
+		margin-top: 3%;
+	}
+}
+
+
+
+
+
+#cloud_container {	
+	width: 100%;
+	height: 200px;
+	position: relative;
+	margin-top: 20px;
+	z-index: 30;
+	@media only screen and (min-width:1200px) and (min-height:800px){
+		-webkit-animation: cloud_flyin .8s 1 ease-in-out;
+	  	animation: cloud_flyin .8s 1 ease-in-out;
+	}
+
+
+	.cloud_ball {
+		.transition(all .2s ease-in-out);
+		background-color: @white;
+		.border-radius(3000px);
+		position: absolute;
+		z-index: 35;
+		height: 400px;
+		width: 400px;
+		top: -200px;
+
+		&.left {
+			left: -200px;
+		}
+
+		&.right {
+			right: -220px;
+		}
+
+	}
+}
+
+
+
+@-webkit-keyframes cloud_flyin {
+	0% { margin-top: 300px; opacity: 0;}
+	20% { margin-top: 300px; opacity: 0;}
+	50% { opacity: 0;}
+	90% { margin-top: 10px; }
+	100% { margin-top: 20px; opacity: 1;}
+}
+
+@keyframes cloud_flyin {
+	0% { margin-top: 300px; opacity: 0;}
+	20% { margin-top: 300px; opacity: 0;}
+	90% { margin-top: 10px; opacity: 1;}
+	100% { margin-top: 20px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+
+8888888b.  888    888  .d88888b. 88888888888 .d88888b.   .d8888b.  
+888   Y88b 888    888 d88P" "Y88b    888    d88P" "Y88b d88P  Y88b 
+888    888 888    888 888     888    888    888     888 Y88b.      
+888   d88P 8888888888 888     888    888    888     888  "Y888b.   
+8888888P"  888    888 888     888    888    888     888     "Y88b. 
+888        888    888 888     888    888    888     888       "888 
+888        888    888 Y88b. .d88P    888    Y88b. .d88P Y88b  d88P 
+888        888    888  "Y88888P"     888     "Y88888P"   "Y8888P"                                                                 
+                                                                   
+**/
+
+#photos {
+	padding: 10% 0;
+	background-color: @grey;
+
+	.blue_bg {
+		background-color: @primary-blue;
+		-webkit-box-shadow: inset 0px 0px 0px 15px @white;
+		-moz-box-shadow: inset 0px 0px 0px 15px @white;
+		box-shadow: inset 0px 0px 0px 15px @white;
+	}
+
+
+
+	img {
+		margin-top: 20px;
+		margin-bottom: 20px; 
+		border: 15px solid white;
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+		-moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+		-webkit-filter: grayscale(100%);
+		-moz-filter: grayscale(100%);
+		filter: grayscale(100%);
+		opacity: 0.36;
+		.transition(all .2s ease-in-out);
+
+		&:hover {
+			opacity: 10;
+			-webkit-filter: none;
+			-moz-filter: none;
+			filter: none;
+
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+
+8888888 888b    888 888     888 8888888 88888888888 8888888888 
+  888   8888b   888 888     888   888       888     888        
+  888   88888b  888 888     888   888       888     888        
+  888   888Y88b 888 Y88b   d88P   888       888     8888888    
+  888   888 Y88b888  Y88b d88P    888       888     888        
+  888   888  Y88888   Y88o88P     888       888     888        
+  888   888   Y8888    Y888P      888       888     888        
+8888888 888    Y888     Y8P     8888888     888     8888888888                                                             
+
+**/
+
+#invite {
+	padding: 12% 0px 14% 0px;
+	background-color: @white;
+	background-position: center;
+	position: relative;
+}
+
+
+#invite_card {
+	background-color: @primary-blue;
+	min-height: 500px;
+	padding: 5%;
+	//width: 100%;
+	position: relative;
+	padding-bottom: 9%;
+
+	li {
+		list-style-type: none;
+	}
+
+	p, ul {
+		text-align: center;
+		font-family: @font4;
+		opacity: 0.9;
+		font-size: 1.3em;
+		margin-bottom: 10%;
+		width: 90%;
+		color: @white;
+		margin: auto;
+		.font-smoothing(antialiased);
+
+		a {
+			color: @white;
+			text-decoration: underline;
+		}
+	}
+
+	ul {
+		margin-left: 0px;
+	}
+
+	h3 {
+		padding: 2%;
+		color: @white;
+	}
+
+	#map {
+		margin-top: 3%;
+		margin-bottom: 2%;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+
+8888888b.   .d8888b.  888     888 8888888b.  
+888   Y88b d88P  Y88b 888     888 888   Y88b 
+888    888 Y88b.      888     888 888    888 
+888   d88P  "Y888b.   Y88b   d88P 888   d88P 
+8888888P"      "Y88b.  Y88b d88P  8888888P"  
+888 T88b         "888   Y88o88P   888        
+888  T88b  Y88b  d88P    Y888P    888        
+888   T88b  "Y8888P"      Y8P     888                                              
+
+**/
+
+#rsvp {
+	background-color: @primary-blue;
+	padding: 12% 0px;
+	position: relative;
+
+	#rsvp_form {
+
+		//opacity: 0;
+		z-index: 10;
+		margin-top: 2%;
+		background-color: @white;
+		-webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+		-moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+		//width: 100%;
+		min-height: 300px;
+		.box-sizing(border-box);
+		position: relative;
+		.transition(all .4s ease-in-out);
+
+	}
+
+	#pin_check {
+		background-color: rgba(0,0,0,0.5);
+		padding-top: 20%; 
+		text-align: center;
+		.box-sizing(border-box);
+		position: absolute;
+		z-index: 10;
+		margin-left: -2%;
+		height: 100%;
+		width: 100%;
+	}
+
+}
+
+
+
+//Rutan ovanför formuläret
+#rsvp_info {
+	background-color: lighten(@grey, 3%);
+	color: @primary-blue;
+	padding: 6% 5%;
+	font-size: 1.15em;
+	line-height: 1.9em;
+	font-family: @font4;
+	
+
+	p {
+		margin-left: 1%;
+	}
+
+
+	h4 {
+		padding-bottom: -3px;
+	}
+
+	ul {
+		padding-left: 3%;
+
+		li {
+			margin-top: 3px;
+		}
+	}
+	//width: 100%;
+}
+
+
+
+.wpcf7-validation-errors, .wpcf7-mail-sent-ok {
+	display: none !important;
+}
+
+form {
+
+	padding: 5% 4% 5% 5%;
+
+
+
+	p {
+		margin-top: 20px;
+	}
+
+	p, span.wpcf7-not-valid-tip {
+
+		label {
+			opacity: 0.8;
+			font-family: @font2;
+			font-size: 1.7em;
+			padding-top: 20px;
+			color: @grey-dark;
+			letter-spacing: 0.04em;
+
+			span {
+				margin-left: 4px;
+				color: @red;
+			}
+		}
+	}
+
+	span.wpcf7-not-valid-tip {
+		color: @red;
+		font-size: 13px;
+		margin-bottom: 0px;
+		margin-top: 5px;
+		font-style: italic;
+	}
+
+	input, textarea, select {
+		.box-shadow(none);
+		.appearance(none);
+		.box-shadow(none);
+		.border-radius(none);
+		.placeholder(0.5, @grey-dark);
+		font-family: @font4;
+		width: 100%;
+		position: relative;
+		border: none;
+		padding: 10px 12px;
+		margin-top: 5px;
+		background-color: lighten(@grey, 3%);
+
+		option {
+			.appearance(none);
+			font-family: @font4;
+		}
+
+		&:focus {
+			background-color: lighten(@grey, 1%);
+			.box-shadow(none);
+			.appearance(none);
+			.box-shadow(none);
+			outline: none;
+		}
+
+	}
+
+	input {
+		//width: 100%;
+
+		&[type="submit"] {
+			width: 100%;
+			max-width: 400px;
+			background-color: @primary-blue;
+			font-family: @font1;
+			text-transform: uppercase;
+			padding: 18px 13px;
+			color: white;
+			font-weight: 500;
+			margin-top: 5%;
+			margin-right: auto;
+			margin-left: auto;
+			display: block;
+
+			.border-radius(100px);
+
+			&:disabled {
+			    background: lighten(@grey-dark, 40%);
+			    user-select: none; 
+			    //color: @grey-dark;
+			    //opacity: 0.5;
+
+			    &:hover {
+					opacity: 1;
+				}
+			}
+
+
+			&:hover {
+				opacity: 0.9;
+			}
+
+			&:focus {
+				background-color: darken(@primary-blue, 3%);
+			}
+		}
+	}
+
+	textarea {
+		resize:  none;
+		padding: 8px 12px;
+	}
+
+
+	.dropdown {
+	    position: relative;
+	    display: block;
+
+	    /*&:before {
+		    content: "";
+		    position: absolute;
+		    right: 10px;
+		    top: 8px;
+		    width: 0; 
+		    height: 0; 
+		    border-left: 10px solid transparent;
+		    border-right: 10px solid transparent;
+		    border-top: 10px solid #f00;
+		}*/
+
+		&:after {
+		    content: "";
+		    position: absolute;
+		    right: 3%;
+		    top: 47%;
+		    width: 0; 
+		    height: 0; 
+		    opacity: 0.8;
+		    border-left: 6px solid transparent;
+		    border-right: 6px solid transparent;
+		    border-top: 6px solid @grey-dark;
+		}
+	}
+}
+
+
+
+//Efter att man skcikat anmälan
+#rsvp_form_now_what {
+	background-color: @secondary-blue;
+	z-index: 5;
+	min-height: 300px;
+	.box-sizing(border-box);
+	position: relative;
+	padding: 6% 5%;
+	.font-smoothing(antialiased);
+
+
+	h4 {
+		color: @white;
+	}
+
+	p {
+		color: @white;
+		opacity: 0.8;
+		font-family: @font4;
+		font-size: 1.15em;
+		line-height: 1.9em;
+		margin-top: 2%;
+	}
+}
+
+
+
+//Vågorna
+#wave_container {
+	height: 29px;
+	width: 100%;
+	position: absolute;
+	background-color: red;
+	background: url(img/wave.png);
+	top: -29px;
+	background-repeat: repeat-x;
+	background-position: bottom;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+
+8888888888 .d88888b.   .d88888b. 88888888888 8888888888 8888888b.  
+888       d88P" "Y88b d88P" "Y88b    888     888        888   Y88b 
+888       888     888 888     888    888     888        888    888 
+8888888   888     888 888     888    888     8888888    888   d88P 
+888       888     888 888     888    888     888        8888888P"  
+888       888     888 888     888    888     888        888 T88b   
+888       Y88b. .d88P Y88b. .d88P    888     888        888  T88b  
+888        "Y88888P"   "Y88888P"     888     8888888888 888   T88b
+
+**/
+
+#footer {
+	background-color: @secondary-blue;
+	text-align: center;
+	
+	font-family: @font2;
+	font-size: 1.5em;
+	padding: 2% 2% 1% 2%;
+	letter-spacing: 0.05em;
+	
+	p {
+		color: rgba(255, 255, 255, 0.4);
+	}
+
+	a {
+		opacity: 0.8;
+		color: @white;
+		text-decoration: underline;
+	}
+	
+	span {
+		margin: auto 0.3%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+
+ .d8888b. 8888888 8888888888P 8888888888      888888b.   8888888b.  8888888888        d8888 888    d8P   .d8888b.  
+d88P  Y88b  888         d88P  888             888  "88b  888   Y88b 888              d88888 888   d8P   d88P  Y88b 
+Y88b.       888        d88P   888             888  .88P  888    888 888             d88P888 888  d8P    Y88b.      
+ "Y888b.    888       d88P    8888888         8888888K.  888   d88P 8888888        d88P 888 888d88K      "Y888b.   
+    "Y88b.  888      d88P     888             888  "Y88b 8888888P"  888           d88P  888 8888888b        "Y88b. 
+      "888  888     d88P      888             888    888 888 T88b   888          d88P   888 888  Y88b         "888 
+Y88b  d88P  888    d88P       888             888   d88P 888  T88b  888         d8888888888 888   Y88b  Y88b  d88P 
+ "Y8888P" 8888888 d8888888888 8888888888      8888888P"  888   T88b 8888888888 d88P     888 888    Y88b  "Y8888P"  
+ 
+
+
+8888888 888b     d888 8888888b.   .d88888b.  8888888b. 88888888888 .d8888b.  
+  888   8888b   d8888 888   Y88b d88P" "Y88b 888   Y88b    888    d88P  Y88b 
+  888   88888b.d88888 888    888 888     888 888    888    888    Y88b.      
+  888   888Y88888P888 888   d88P 888     888 888   d88P    888     "Y888b.   
+  888   888 Y888P 888 8888888P"  888     888 8888888P"     888        "Y88b. 
+  888   888  Y8P  888 888        888     888 888 T88b      888          "888 
+  888   888   "   888 888        Y88b. .d88P 888  T88b     888    Y88b  d88P 
+8888888 888       888 888         "Y88888P"  888   T88b    888     "Y8888P"
+
+**/ 
+
+@import "style-responsive.less"; 
